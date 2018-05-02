@@ -1,0 +1,29 @@
+<view class="newsTab">
+  <view class="news-tab {{tab==0?'active':''}}" data-current="0" bindtap="switchSlide">国内</view>
+  <view class="news-tab {{tab==1?'active':''}}" data-current="1" bindtap="switchSlide">国际</view>
+  <view class="news-tab {{tab==2?'active':''}}" data-current="2" bindtap="switchSlide">财经</view>
+  <view class="news-tab {{tab==3?'active':''}}" data-current="3" bindtap="switchSlide">娱乐</view>
+  <view class="news-tab {{tab==4?'active':''}}" data-current="4" bindtap="switchSlide">军事</view>
+  <view class="news-tab {{tab==5?'active':''}}" data-current="5" bindtap="switchSlide">体育</view>
+  <view class="news-tab {{tab==6?'active':''}}" data-current="6" bindtap="switchSlide">其他</view>
+</view>
+<swiper current="{{tab}}" class="swiper-content" duration="300" bindchange="switchTab" style="height:{{winHeight}}rpx">
+  <swiper-item class="swiper-items" wx:for="{{[0,1,2,3,4,5,6]}}">
+    <scroll-view scroll-y="true" enable-back-to-top="true" class="scoll-h">
+      <block class="news-list" wx:for="{{newsList}}" bindtap="switchSlide">
+        <view class="news-item" data-id="{{item.id}}" bindtap='onTapNewsDetail'>
+          <view class="news-profile">
+            <view class="news-title">{{item.title}}</view>
+            <view class="news-source">{{item.source}}</view>
+            <view class="news-date">{{item.date}}</view>
+          </view>
+          <image class="news-img" src="{{item.firstImage}}" mode="scaleToFill"></image>
+        </view>
+      </block>
+    </scroll-view>
+  </swiper-item>
+</swiper>
+
+
+
+

@@ -1,0 +1,55 @@
+.news-detail{
+  position: relative;
+  height:300rpx;
+  width: 100%;
+}
+
+.title{
+  position: absolute;
+  padding: 0 30rpx;
+  font-size: 50rpx;
+  line-height: 70rpx;
+}
+
+.source{
+  position: absolute;
+  float: left;
+  left: 300rpx;
+  opacity: 0.5;
+  bottom: 30rpx;
+  font-size: 25rpx;
+  line-height: 35rpx;
+}
+
+.date{
+  position: absolute;
+  float: left;
+  left: 30rpx;
+  opacity: 0.5;
+  bottom: 30rpx;
+  font-size: 25rpx;
+  line-height: 35rpx;
+}
+
+.readCount{
+  position: absolute;
+  right: 30rpx;
+  opacity: 0.5;
+  bottom: 30rpx;
+  font-size: 25rpx;
+  line-height: 35rpx;
+}
+
+.content{
+  height:100%;
+  margin:40rpx 30rpx;
+  align-items: center;
+}
+
+.content-image{
+  text-align: center;
+}
+
+.image{
+  vertical-align: middle;
+}

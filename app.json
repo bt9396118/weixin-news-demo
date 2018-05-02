@@ -1,0 +1,13 @@
+{
+  "pages":[
+    "pages/index/index",
+    "pages/news/details"
+  ],
+  "window":{
+    "backgroundTextStyle":"dark",
+    "navigationBarBackgroundColor": "#679aeb",
+    "navigationBarTitleText": "新闻·咨询",
+    "navigationBarTextStyle":"white",
+    "enablePullDownRefresh": true
+  }
+}
