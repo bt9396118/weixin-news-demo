@@ -1,8 +1,17 @@
-const newsType=['gn','gj','cj','yl','js','ty','other'] //新闻类型参数
+const newsType=[
+  { newstype: "gn", newstab: "国内" },
+  { newstype: "gj", newstab: "国际" },
+  { newstype: "cj", newstab: "财经" },
+  { newstype: "yl", newstab: "娱乐" },
+  { newstype: "js", newstab: "军事" },
+  { newstype: "ty", newstab: "体育" },
+  { newstype: "other", newstab: "其他" },
+]
 Page({
   data:{
     winHeight:"",
     tab: 0, //预设当前tab项的值，0为国内的tab值
+    newsType: newsType,
     newList:[],
   },
   onPullDownRefresh() {
@@ -21,7 +30,7 @@ Page({
   //点击标题切换tab页
   switchSlide: function (e) {
     let cur = e.target.dataset.current;
-    if (this.data.tab == cur) { return false; }
+    if (this.data.tab === cur) { return false; }
     else {
       this.setData({
         tab: cur
@@ -42,7 +51,8 @@ Page({
         })
       }
     }),
-    this.getNews(0) //初始化页面，当tab为0也就是国内新闻页面
+    console.log(Array.from({length:newsType.length},(v,i)=>i))
+    this.getNews(this.data.tab) //初始化页面，当tab为0也就是国内新闻页面
   },
 
   onTapNewsDetail:function(e){
@@ -55,11 +65,11 @@ Page({
     wx.request({
       url:'https://test-miniprogram.com/api/news/list',
       data:{
-        type: newsType[tab]
+        type: newsType[tab].newstype
       },
       success:res=>{
         let result=res.data.result
-        //tab页的新闻类型，console.log("type:" + newsType[tab])
+        //tab页的新闻类型，console.log("type:" + newsType[tab].newstype)
         this.setNews(result)
       },
       complete:()=>{

@@ -1,6 +1,10 @@
+.newsTabList{
+  display: flex;
+}
 .newsTab{
   display: flex;
-  justify-content: space-evenly;
+  flex-direction: row;
+  justify-content: space-around;
   top: 0;
   left: 0;
   background-color: #679ae6;
